@@ -1,0 +1,84 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SSH_PORT || 22 }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT || 22 }}
+          PROJECT_DIR: ${{ secrets.PROJECT_DIR || '~/licencegenerator' }}
+        run: |
+          ssh -p $SSH_PORT $SSH_USER@$SSH_HOST << 'ENDSSH'
+            set -e
+            
+            echo "Navigating to project directory..."
+            cd $PROJECT_DIR || { echo "Project directory not found: $PROJECT_DIR"; exit 1; }
+            
+            echo "Pulling latest changes..."
+            git fetch origin
+            git reset --hard origin/main
+            git clean -fd
+            
+            echo "Stopping existing containers..."
+            docker-compose down || true
+            
+            echo "Building and starting containers..."
+            docker-compose build --no-cache
+            docker-compose up -d
+            
+            echo "Waiting for services to start..."
+            sleep 10
+            
+            echo "Checking backend health..."
+            BACKEND_HEALTH=$(curl -f http://localhost:5070/health || echo "FAILED")
+            if [ "$BACKEND_HEALTH" = "FAILED" ]; then
+              echo "Backend health check failed!"
+              docker-compose logs backend
+              exit 1
+            fi
+            echo "Backend is healthy!"
+            
+            echo "Checking frontend..."
+            FRONTEND_CHECK=$(curl -f http://localhost:5071 || echo "FAILED")
+            if [ "$FRONTEND_CHECK" = "FAILED" ]; then
+              echo "Frontend check failed!"
+              docker-compose logs frontend
+              exit 1
+            fi
+            echo "Frontend is accessible!"
+            
+            echo "Deployment completed successfully!"
+            
+            echo "Container status:"
+            docker-compose ps
+          ENDSSH
+
+      - name: Deployment Summary
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "Backend: http://${{ secrets.SSH_HOST }}:5070"
+          echo "Frontend: http://${{ secrets.SSH_HOST }}:5071"
+
