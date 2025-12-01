@@ -1,0 +1,32 @@
+{
+  "name": "license-portal-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
+    "axios": "^1.7.7",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-hook-form": "^7.53.0",
+    "zustand": "^5.0.0",
+    "recharts": "^2.12.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "3.4.0",
+    "typescript": "5.9.3",
+    "vite": "5.4.0"
+  }
+}
+
+

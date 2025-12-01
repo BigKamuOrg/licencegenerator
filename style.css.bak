@@ -1,0 +1,132 @@
+/* Genel Stil ve Vücut Ayarları */
+body {
+    font-family: sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Üstten başla */
+    padding: 30px 0;
+    margin: 0;
+}
+
+/* Ana Konteyner Ayarları */
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Daha geniş form */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+/* Form Alanı Grubu */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Giriş Alanları ve Select Stili */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buton Stili */
+button[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mesaj ve Liste Stilleri */
+#message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.hidden {
+    display: none;
+}
+#noLicenses {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Yeni Lisans Kartı Stili */
+.license-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-left: 5px solid #007bff; /* Mavi vurgu */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    transition: box-shadow 0.2s;
+}
+.license-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.license-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #007bff;
+    font-size: 1.2em;
+}
+.license-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+.license-card strong {
+    color: #333;
+    display: inline-block;
+    min-width: 150px;
+}

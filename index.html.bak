@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş Lisans Yapılandırma Formu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lisans Yapılandırma Girişi</h1>
+        
+        <form id="licenseForm">
+            
+            <div class="form-group">
+                <label for="companyId">Şirket ID:</label>
+                <input type="text" id="companyId" name="CompanyId" required 
+                       value="DEMO-COMPANY-001" placeholder="DEMO-COMPANY-001">
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">Şirket Adı:</label>
+                <input type="text" id="companyName" name="CompanyName" required 
+                       value="Demo Company Ltd." placeholder="Demo Company Ltd.">
+            </div>
+            
+            <div class="form-group">
+                <label for="licenseType">Lisans Tipi:</label>
+                <select id="licenseType" name="LicenseType" required>
+                    <option value="ENTERPRISE" selected>ENTERPRISE</option>
+                    <option value="PROFESSIONAL">PROFESSIONAL</option>
+                    <option value="STANDARD">STANDARD</option>
+                    <option value="TRIAL">TRIAL</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="maxUsers">Maksimum Kullanıcı Sayısı:</label>
+                <input type="number" id="maxUsers" name="MaxUsers" required min="1" 
+                       value="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="expiryYears">Geçerlilik Süresi (Yıl):</label>
+                <input type="number" id="expiryYears" name="ExpiryYears" required min="1"
+                       value="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="keyPrefix">Lisans Anahtarı Ön Eki:</label>
+                <input type="text" id="keyPrefix" name="LicenseKeyPrefix" 
+                       value="DEMO-ENT-2024" placeholder="DEMO-ENT-2024">
+            </div>
+
+            <button type="submit">Lisans Yapılandırmasını Ekle</button>
+
+            <p id="message" class="hidden"></p>
+        </form>
+
+        <hr>
+
+        <h2>📜 Eklenen Lisanslar</h2>
+        <div id="licenseList">
+            <p id="noLicenses">Henüz lisans eklenmedi.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

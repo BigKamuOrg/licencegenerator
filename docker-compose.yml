@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: license_backend
+    restart: unless-stopped
+    # Veritabanı Docker dışında (lokal makinede) çalıştığı için
+    # DB_HOST olarak host.docker.internal kullanıyoruz.
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 123456
+      DB_NAME: biglicence
+      JWT_SECRET: "super-secret-key-change-in-production"
+      PORT: 5070
+      NODE_ENV: production
+      # SMTP ayarları (opsiyonel - .env dosyasından da alınabilir)
+      # SMTP_HOST: smtp.example.com
+      # SMTP_PORT: 587
+      # SMTP_USER: no-reply@example.com
+      # SMTP_PASS: your-password
+      # MAIL_FROM: "Lisans Portalı <no-reply@example.com>"
+    ports:
+      - "5070:5070"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:5070/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - license_network
+
+  frontend:
+    build: ./frontend
+    container_name: license_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5071:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:5070/api
+    networks:
+      - license_network
+
+networks:
+  license_network:
+    driver: bridge
+
+

@@ -1,0 +1,104 @@
+{
+  "login": {
+    "title": "Lizenz-Portal Anmeldung",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "emailPlaceholder": "beispiel@email.com",
+    "passwordPlaceholder": "••••••••",
+    "submit": "Anmelden",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "app": {
+    "title": "Lizenzverwaltungsportal",
+    "dashboard": "Dashboard",
+    "licenses": "Lizenzen",
+    "logout": "Abmelden"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalLicenses": "Gesamtlizenzen",
+    "activeLicenses": "Aktive Lizenzen",
+    "expiringLicenses": "Läuft bald ab",
+    "totalCustomers": "Gesamtkunden",
+    "statusSummary": "Lizenzstatus-Zusammenfassung",
+    "createdPerMonth": "Monatlich erstellte Lizenzen",
+    "expiringPerMonth": "Monatlich ablaufende Lizenzen",
+    "noData": "Keine Lizenzdaten in den letzten 12 Monaten erstellt."
+  },
+  "licenses": {
+    "title": "Lizenzverwaltungspanel",
+    "totalLicenses": "Gesamtlizenzen",
+    "enterpriseLicenses": "Enterprise-Lizenzen",
+    "addNew": "Neue Lizenz",
+    "bulkAdd": "Massenhinzufügung über Excel",
+    "searchPlaceholder": "Suchen: Firma, ID, E-Mail, Typ...",
+    "table": {
+      "title": "Hinzugefügte Lizenzen",
+      "company": "Firma",
+      "license": "Lizenz",
+      "maxUsers": "Max. Benutzer",
+      "expiryDate": "Ablaufdatum",
+      "status": "Status",
+      "customerEmail": "Kunden-E-Mail",
+      "actions": "Aktionen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "sendEmail": "E-Mail senden",
+      "download": "Herunterladen",
+      "noLicenses": "Noch keine Lizenzen hinzugefügt."
+    },
+    "form": {
+      "title": "Lizenz hinzufügen/bearbeiten",
+      "companyId": "Firmen-ID",
+      "companyName": "Firmenname",
+      "customerEmail": "Kunden-E-Mail",
+      "licenseType": "Lizenztyp",
+      "maxUsers": "Max. Benutzer",
+      "expiryYears": "Ablaufjahre",
+      "keyPrefix": "Schlüsselpräfix",
+      "save": "Speichern",
+      "cancel": "Abbrechen"
+    },
+    "bulk": {
+      "title": "Massenlizenz-Upload über Excel",
+      "downloadTemplate": "Excel-Vorlage herunterladen",
+      "uploadFile": "Excel-Datei hochladen",
+      "preview": "Vorschau",
+      "add": "Hinzufügen",
+      "cancel": "Abbrechen",
+      "noData": "Noch keine Daten hochgeladen."
+    },
+    "status": {
+      "DRAFT": "Entwurf",
+      "SIGNED": "Unterschrieben",
+      "EXPIRED": "Abgelaufen",
+      "REVOKED": "Widerrufen",
+      "ACTIVE": "Aktiv",
+      "INACTIVE": "Inaktiv"
+    },
+    "messages": {
+      "created": "Lizenz erfolgreich erstellt.",
+      "updated": "Lizenz erfolgreich aktualisiert.",
+      "deleted": "Lizenz erfolgreich gelöscht.",
+      "emailSent": "Lizenzinformationen wurden per E-Mail an den Kunden gesendet.",
+      "emailError": "E-Mail konnte nicht gesendet werden",
+      "emailNotSigned": "E-Mails können nur für unterschriebene Lizenzen gesendet werden.",
+      "emailNotSet": "Kunden-E-Mail für diese Lizenz nicht festgelegt.",
+      "downloadError": "Nur unterschriebene Lizenzen können heruntergeladen werden.",
+      "downloadSuccess": "Lizenzinformationen heruntergeladen.",
+      "bulkSuccess": "Lizenzen erfolgreich aus Excel hinzugefügt.",
+      "bulkError": "Fehler beim Massenhinzufügen von Lizenzen.",
+      "deleteConfirm": "Sind Sie sicher, dass Sie diese Lizenz löschen möchten?"
+    }
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "count": "Stück"
+  }
+}
+

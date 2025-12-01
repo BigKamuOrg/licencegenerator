@@ -1,0 +1,5 @@
+# API Base URL (Vite proxy kullanıyorsan opsiyonel)
+# VITE_API_BASE_URL=http://localhost:5070/api
+
+# Uygulama Ortamı (development, production)
+# VITE_APP_ENV=development

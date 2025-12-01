@@ -1,0 +1,104 @@
+{
+  "login": {
+    "title": "تسجيل الدخول إلى بوابة الترخيص",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "emailPlaceholder": "example@email.com",
+    "passwordPlaceholder": "••••••••",
+    "submit": "تسجيل الدخول",
+    "selectLanguage": "اختر اللغة"
+  },
+  "app": {
+    "title": "بوابة إدارة التراخيص",
+    "dashboard": "لوحة التحكم",
+    "licenses": "التراخيص",
+    "logout": "تسجيل الخروج"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "totalLicenses": "إجمالي التراخيص",
+    "activeLicenses": "التراخيص النشطة",
+    "expiringLicenses": "تنتهي قريباً",
+    "totalCustomers": "إجمالي العملاء",
+    "statusSummary": "ملخص حالة الترخيص",
+    "createdPerMonth": "التراخيص المُنشأة شهرياً",
+    "expiringPerMonth": "التراخيص التي تنتهي شهرياً",
+    "noData": "لا توجد بيانات ترخيص تم إنشاؤها في آخر 12 شهراً."
+  },
+  "licenses": {
+    "title": "لوحة إدارة التراخيص",
+    "totalLicenses": "إجمالي التراخيص",
+    "enterpriseLicenses": "تراخيص المؤسسات",
+    "addNew": "ترخيص جديد",
+    "bulkAdd": "إضافة مجمعة عبر Excel",
+    "searchPlaceholder": "بحث: شركة، معرف، بريد إلكتروني، نوع...",
+    "table": {
+      "title": "التراخيص المضافة",
+      "company": "الشركة",
+      "license": "الترخيص",
+      "maxUsers": "الحد الأقصى للمستخدمين",
+      "expiryDate": "تاريخ الانتهاء",
+      "status": "الحالة",
+      "customerEmail": "بريد العميل الإلكتروني",
+      "actions": "الإجراءات",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "sendEmail": "إرسال بريد إلكتروني",
+      "download": "تحميل",
+      "noLicenses": "لم تتم إضافة تراخيص بعد."
+    },
+    "form": {
+      "title": "إضافة/تعديل الترخيص",
+      "companyId": "معرف الشركة",
+      "companyName": "اسم الشركة",
+      "customerEmail": "بريد العميل الإلكتروني",
+      "licenseType": "نوع الترخيص",
+      "maxUsers": "الحد الأقصى للمستخدمين",
+      "expiryYears": "سنوات الانتهاء",
+      "keyPrefix": "بادئة المفتاح",
+      "save": "حفظ",
+      "cancel": "إلغاء"
+    },
+    "bulk": {
+      "title": "رفع التراخيص المجمعة عبر Excel",
+      "downloadTemplate": "تحميل قالب Excel مثال",
+      "uploadFile": "رفع ملف Excel",
+      "preview": "معاينة",
+      "add": "إضافة",
+      "cancel": "إلغاء",
+      "noData": "لم يتم رفع البيانات بعد."
+    },
+    "status": {
+      "DRAFT": "مسودة",
+      "SIGNED": "موقعة",
+      "EXPIRED": "منتهية الصلاحية",
+      "REVOKED": "ملغاة",
+      "ACTIVE": "نشط",
+      "INACTIVE": "غير نشط"
+    },
+    "messages": {
+      "created": "تم إنشاء الترخيص بنجاح.",
+      "updated": "تم تحديث الترخيص بنجاح.",
+      "deleted": "تم حذف الترخيص بنجاح.",
+      "emailSent": "تم إرسال معلومات الترخيص إلى العميل عبر البريد الإلكتروني.",
+      "emailError": "فشل إرسال البريد الإلكتروني",
+      "emailNotSigned": "يمكن إرسال البريد الإلكتروني فقط للتراخيص الموقعة.",
+      "emailNotSet": "لم يتم تعيين بريد العميل الإلكتروني لهذا الترخيص.",
+      "downloadError": "يمكن تنزيل التراخيص الموقعة فقط.",
+      "downloadSuccess": "تم تنزيل معلومات الترخيص.",
+      "bulkSuccess": "تمت إضافة التراخيص بنجاح من Excel.",
+      "bulkError": "حدث خطأ أثناء إضافة التراخيص المجمعة.",
+      "deleteConfirm": "هل أنت متأكد من أنك تريد حذف هذا الترخيص؟"
+    }
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "count": "قطعة"
+  }
+}
+

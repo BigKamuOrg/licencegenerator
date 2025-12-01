@@ -1,0 +1,96 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('licenseForm');
+    const messageElement = document.getElementById('message');
+    const licenseListElement = document.getElementById('licenseList');
+    const noLicensesMessage = document.getElementById('noLicenses');
+    
+    // Geçici olarak eklenen lisansları tutacak dizi (Veritabanı yerine)
+    let licenses = []; 
+
+    // Form gönderildiğinde çalışacak fonksiyon
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Form verilerini toplama
+        const formData = new FormData(this);
+        const licenseData = {};
+        
+        // formData'yı JSON yapısına çevirme
+        for (const [key, value] of formData.entries()) {
+            // Sayısal değerleri int'e dönüştürme
+            if (['MaxUsers', 'ExpiryYears', 'MaxAssets'].includes(key)) {
+                licenseData[key] = parseInt(value);
+            } else {
+                licenseData[key] = value.trim();
+            }
+        }
+        
+        // JSON yapısını oluşturma (Sizin istediğiniz format)
+        const newLicense = {
+            LicenseConfig: licenseData
+        };
+
+        // Otomatik Lisans Anahtarı oluşturma (Basit Örnek)
+        const timestamp = new Date().getTime();
+        newLicense.LicenseConfig.GeneratedKey = `${licenseData.LicenseKeyPrefix}-${timestamp.toString().slice(-6)}`;
+        
+        // Listeye ekleme
+        licenses.push(newLicense);
+        
+        // Listeyi güncelleme ve kullanıcıya geri bildirim
+        renderLicenseList();
+        showMessage(`✅ Yeni Lisans Yapılandırması başarıyla eklendi. Anahtar: ${newLicense.LicenseConfig.GeneratedKey}`, 'success');
+        
+        // Formu temizle (Şirket ID ve Adı kalabilir, diğerleri temizlenir)
+        document.getElementById('maxUsers').value = 100;
+        document.getElementById('expiryYears').value = 1;
+        document.getElementById('licenseType').value = 'ENTERPRISE';
+        
+    });
+    
+    // Lisansları listede gösteren fonksiyon
+    function renderLicenseList() {
+        licenseListElement.innerHTML = ''; // Listeyi temizle
+        
+        if (licenses.length === 0) {
+            licenseListElement.appendChild(noLicensesMessage);
+            noLicensesMessage.classList.remove('hidden');
+            return;
+        }
+
+        noLicensesMessage.classList.add('hidden');
+
+        licenses.forEach((license, index) => {
+            const config = license.LicenseConfig;
+            
+            const card = document.createElement('div');
+            card.className = 'license-card';
+            
+            // Kart içeriğini oluşturma
+            card.innerHTML = `
+                <h3>${index + 1}. Lisans (${config.LicenseType})</h3>
+                <p><strong>Şirket Adı:</strong> ${config.CompanyName}</p>
+                <p><strong>Anahtar:</strong> ${config.GeneratedKey || 'N/A'}</p>
+                <p><strong>Kullanıcı/Yıl:</strong> ${config.MaxUsers} Kullanıcı / ${config.ExpiryYears} Yıl</p>
+                <p><strong>Şirket ID:</strong> ${config.CompanyId}</p>
+            `;
+            
+            licenseListElement.appendChild(card);
+        });
+    }
+
+    // Mesaj gösterme fonksiyonu (bir önceki örnekten)
+    function showMessage(text, type) {
+        messageElement.textContent = text;
+        messageElement.className = '';
+        messageElement.classList.add(type);
+        messageElement.classList.remove('hidden');
+        
+        setTimeout(() => {
+            messageElement.classList.add('hidden');
+        }, 6000);
+    }
+    
+    // Sayfa yüklendiğinde listeyi bir kez render et
+    renderLicenseList();
+});

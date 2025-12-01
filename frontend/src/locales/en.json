@@ -1,0 +1,104 @@
+{
+  "login": {
+    "title": "License Portal Login",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "example@email.com",
+    "passwordPlaceholder": "••••••••",
+    "submit": "Sign In",
+    "selectLanguage": "Select Language"
+  },
+  "app": {
+    "title": "License Management Portal",
+    "dashboard": "Dashboard",
+    "licenses": "Licenses",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalLicenses": "Total Licenses",
+    "activeLicenses": "Active Licenses",
+    "expiringLicenses": "Expiring Soon",
+    "totalCustomers": "Total Customers",
+    "statusSummary": "License Status Summary",
+    "createdPerMonth": "Licenses Created Per Month",
+    "expiringPerMonth": "Licenses Expiring Per Month",
+    "noData": "No license data created in the last 12 months."
+  },
+  "licenses": {
+    "title": "License Management Panel",
+    "totalLicenses": "Total Licenses",
+    "enterpriseLicenses": "Enterprise Licenses",
+    "addNew": "New License",
+    "bulkAdd": "Bulk Add via Excel",
+    "searchPlaceholder": "Search: company, ID, email, type...",
+    "table": {
+      "title": "Added Licenses",
+      "company": "Company",
+      "license": "License",
+      "maxUsers": "Max Users",
+      "expiryDate": "Expiry Date",
+      "status": "Status",
+      "customerEmail": "Customer Email",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "sendEmail": "Send Email",
+      "download": "Download",
+      "noLicenses": "No licenses added yet."
+    },
+    "form": {
+      "title": "Add/Edit License",
+      "companyId": "Company ID",
+      "companyName": "Company Name",
+      "customerEmail": "Customer Email",
+      "licenseType": "License Type",
+      "maxUsers": "Max Users",
+      "expiryYears": "Expiry Years",
+      "keyPrefix": "Key Prefix",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "bulk": {
+      "title": "Bulk License Upload via Excel",
+      "downloadTemplate": "Download Example Excel Template",
+      "uploadFile": "Upload Excel File",
+      "preview": "Preview",
+      "add": "Add",
+      "cancel": "Cancel",
+      "noData": "No data uploaded yet."
+    },
+    "status": {
+      "DRAFT": "Draft",
+      "SIGNED": "Signed",
+      "EXPIRED": "Expired",
+      "REVOKED": "Revoked",
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "messages": {
+      "created": "License created successfully.",
+      "updated": "License updated successfully.",
+      "deleted": "License deleted successfully.",
+      "emailSent": "License information sent to customer via email.",
+      "emailError": "Failed to send email",
+      "emailNotSigned": "Only SIGNED licenses can have emails sent.",
+      "emailNotSet": "Customer email is not set for this license.",
+      "downloadError": "Only SIGNED licenses can be downloaded.",
+      "downloadSuccess": "License information downloaded.",
+      "bulkSuccess": "Licenses added successfully from Excel.",
+      "bulkError": "Error occurred during bulk license addition.",
+      "deleteConfirm": "Are you sure you want to delete this license?"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "count": "pcs"
+  }
+}
+

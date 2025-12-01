@@ -1,0 +1,104 @@
+{
+  "login": {
+    "title": "Lisans Portalı Girişi",
+    "email": "E-posta",
+    "password": "Şifre",
+    "emailPlaceholder": "ornek@email.com",
+    "passwordPlaceholder": "••••••••",
+    "submit": "Giriş Yap",
+    "selectLanguage": "Dil Seçin"
+  },
+  "app": {
+    "title": "Lisans Yönetim Portalı",
+    "dashboard": "Dashboard",
+    "licenses": "Lisanslar",
+    "logout": "Çıkış Yap"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalLicenses": "Toplam Lisans",
+    "activeLicenses": "Aktif Lisanslar",
+    "expiringLicenses": "Yakında Bitecek",
+    "totalCustomers": "Toplam Müşteri",
+    "statusSummary": "Lisans Durum Özeti",
+    "createdPerMonth": "Aylara Göre Oluşturulan Lisanslar",
+    "expiringPerMonth": "Aylara Göre Bitişe Yaklaşan Lisanslar",
+    "noData": "Son 12 ayda oluşturulan lisans verisi bulunmuyor."
+  },
+  "licenses": {
+    "title": "Lisans Yönetim Paneli",
+    "totalLicenses": "Toplam Lisans",
+    "enterpriseLicenses": "Enterprise Lisanslar",
+    "addNew": "Yeni Lisans",
+    "bulkAdd": "Excel ile Toplu Ekle",
+    "searchPlaceholder": "Ara: şirket, ID, e‑posta, tip...",
+    "table": {
+      "title": "Eklenen Lisanslar",
+      "company": "Şirket",
+      "license": "Lisans",
+      "maxUsers": "Maks. Kullanıcı",
+      "expiryDate": "Bitiş Tarihi",
+      "status": "Durum",
+      "customerEmail": "Müşteri E-posta",
+      "actions": "İşlemler",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "sendEmail": "Mail Gönder",
+      "download": "İndir",
+      "noLicenses": "Henüz lisans eklenmedi."
+    },
+    "form": {
+      "title": "Lisans Ekle/Düzenle",
+      "companyId": "Şirket ID",
+      "companyName": "Şirket Adı",
+      "customerEmail": "Müşteri E-posta",
+      "licenseType": "Lisans Tipi",
+      "maxUsers": "Maks. Kullanıcı",
+      "expiryYears": "Bitiş Yılı",
+      "keyPrefix": "Anahtar Ön Eki",
+      "save": "Kaydet",
+      "cancel": "İptal"
+    },
+    "bulk": {
+      "title": "Excel ile Toplu Lisans Ekleme",
+      "downloadTemplate": "Örnek Excel Şablonunu İndir",
+      "uploadFile": "Excel Dosyası Yükle",
+      "preview": "Önizleme",
+      "add": "Ekle",
+      "cancel": "Vazgeç",
+      "noData": "Henüz veri yüklenmedi."
+    },
+    "status": {
+      "DRAFT": "Taslak",
+      "SIGNED": "İmzalı",
+      "EXPIRED": "Süresi Dolmuş",
+      "REVOKED": "İptal Edilmiş",
+      "ACTIVE": "Aktif",
+      "INACTIVE": "Pasif"
+    },
+    "messages": {
+      "created": "Lisans başarıyla oluşturuldu.",
+      "updated": "Lisans başarıyla güncellendi.",
+      "deleted": "Lisans başarıyla silindi.",
+      "emailSent": "Lisans bilgileri müşteriye e‑posta ile gönderildi.",
+      "emailError": "E-posta gönderilemedi",
+      "emailNotSigned": "Sadece SIGNED durumundaki lisanslar için e-posta gönderilebilir.",
+      "emailNotSet": "Bu lisans için müşteri e-posta adresi tanımlı değil.",
+      "downloadError": "Sadece SIGNED durumundaki lisanslar indirilebilir.",
+      "downloadSuccess": "Lisans bilgileri indirildi.",
+      "bulkSuccess": "Excel'den lisanslar başarıyla eklendi.",
+      "bulkError": "Toplu lisans ekleme sırasında hata oluştu.",
+      "deleteConfirm": "Bu lisansı silmek istediğinize emin misiniz?"
+    }
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "close": "Kapat",
+    "count": "adet"
+  }
+}
+
