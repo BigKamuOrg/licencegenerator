@@ -18,6 +18,7 @@ lerna-debug.log*
 dist/
 build/
 *.tsbuildinfo
+.vite/
 
 # Logs
 logs/
@@ -32,6 +33,7 @@ logs/
 ehthumbs.db
 Thumbs.db
 desktop.ini
+$RECYCLE.BIN/
 
 # IDE files
 .vscode/
@@ -42,28 +44,42 @@ desktop.ini
 .project
 .classpath
 .settings/
+*.sublime-project
+*.sublime-workspace
 
 # Testing
 coverage/
 .nyc_output/
 *.lcov
+.jest/
 
 # Temporary files
 *.tmp
 *.temp
 .cache/
+.temp/
 
 # Docker
 docker-compose.override.yml
+.dockerignore
 
 # Database
 *.sqlite
 *.sqlite3
 *.db
+*.dump
+*.sql.gz
 
 # Backup files
 *.bak
 *.backup
+
+# Vite
+.vite/
+vite.config.*.timestamp-*
+
+# TypeScript
+*.tsbuildinfo
 
 # Package manager locks (optional - uncomment if you don't want to commit them)
 # package-lock.json
