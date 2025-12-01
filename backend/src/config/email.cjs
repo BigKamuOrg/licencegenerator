@@ -5,7 +5,8 @@ const {
   SMTP_PORT,
   SMTP_USER,
   SMTP_PASS,
-  MAIL_FROM
+  MAIL_FROM,
+  MAIL_GROUP
 } = process.env;
 
 const transporter =
@@ -32,12 +33,19 @@ async function sendLicenseEmail(to, subject, text) {
   }
 
   try {
-    await transporter.sendMail({
+    const mailOptions = {
       from: MAIL_FROM || SMTP_USER,
       to,
       subject,
       text
-    });
+    };
+
+    // Eğer grup mail adresi tanımlıysa BCC olarak ekle
+    if (MAIL_GROUP && MAIL_GROUP.trim()) {
+      mailOptions.bcc = MAIL_GROUP.trim();
+    }
+
+    await transporter.sendMail(mailOptions);
   } catch (err) {
     console.error("Email send error:", err);
     throw err;

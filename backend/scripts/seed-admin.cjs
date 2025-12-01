@@ -70,7 +70,7 @@ async function main() {
           `
           INSERT INTO role_permissions (role_id, permission_id)
           VALUES ($1, $2)
-          ON CONFLICT DO NOTHING;
+          ON CONFLICT (role_id, permission_id) DO NOTHING;
         `,
           [adminRoleId, perm.id]
         );
@@ -112,7 +112,7 @@ async function main() {
         `
         INSERT INTO user_roles (user_id, role_id)
         VALUES ($1, $2)
-        ON CONFLICT DO NOTHING;
+        ON CONFLICT (user_id, role_id) DO NOTHING;
       `,
         [userId, adminRoleId]
       );

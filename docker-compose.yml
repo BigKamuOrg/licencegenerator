@@ -22,6 +22,7 @@ services:
       # SMTP_USER: no-reply@example.com
       # SMTP_PASS: your-password
       # MAIL_FROM: "Lisans Portalı <no-reply@example.com>"
+      MAIL_GROUP: group@example.com
     ports:
       - "5070:5070"
     healthcheck:

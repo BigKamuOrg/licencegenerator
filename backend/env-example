@@ -18,3 +18,5 @@ SMTP_PORT=587
 SMTP_USER=no-reply@ornek.com
 SMTP_PASS=parolanizi_buraya_yazin
 MAIL_FROM="Lisans Portalı <no-reply@ornek.com>"
+# Grup Mail Adresi (Opsiyonel - Mail gönderildiğinde bu adrese de BCC olarak mail atılır)
+MAIL_GROUP=group@ornek.com
