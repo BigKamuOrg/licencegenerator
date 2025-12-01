@@ -43,7 +43,7 @@ services:
     ports:
       - "5071:80"
     environment:
-      - VITE_API_BASE_URL=http://localhost:5070/api
+      - VITE_API_BASE_URL=http://213.14.81.2:5070/api
     networks:
       - license_network
 
